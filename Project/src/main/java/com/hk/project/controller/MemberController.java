@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hk.project.service.MemberService;
 import com.hk.project.vo.Member;
@@ -49,5 +50,9 @@ public class MemberController {
 	}
 	
 	//회원삭제
-
+	@GetMapping("/member/delete")
+	public String memberDelete(@RequestParam("mno") int mno) {
+		memberService.memberDelete(mno);
+		return "memberDelete";
+	}
 }
