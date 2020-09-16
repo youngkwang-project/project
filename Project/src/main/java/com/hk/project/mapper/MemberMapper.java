@@ -17,7 +17,7 @@ public interface MemberMapper {
 	
 	public int memberUpdateDone(Member member);
 	
-	public Member memberDelete(int mno);
+	public int memberDelete(int mno);
 	
 	
 		

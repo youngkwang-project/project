@@ -29,7 +29,7 @@ public class MemberService {
 			return memberMapper.memberUpdateDone(member);
 		}
 		
-		public Member memberDelete(int mno) {
+		public int memberDelete(int mno) {
 			return memberMapper.memberDelete(mno);
 		}
 }

@@ -60,7 +60,7 @@
 									<tr>
 										<td><c:out value="${member.mno}" /></td>
 										<td><a
-											href='member/update?mno=<c:out value="${member.mno}" />'><c:out
+											href='update?mno=<c:out value="${member.mno}" />'><c:out
 													value="${member.mname}" /></a></td>
 										<td><c:out value="${member.email}" /></td>
 										<td><fmt:formatDate pattern="yyyy-MM-dd"

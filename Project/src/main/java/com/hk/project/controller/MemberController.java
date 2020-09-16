@@ -31,7 +31,7 @@ public class MemberController {
 	
 	@PostMapping("/member/register")
 	public String memberRegisterDone(Member member, Model model) {
-		System.out.println("---------------------" + member);
+		
 		memberService.memberRegisterDone(member);
 		
 		model.addAttribute("member",member);
@@ -40,8 +40,9 @@ public class MemberController {
 	
 	//회원정보수정
 	@GetMapping("/member/update")
-	public String memberUpdate(@RequestParam("mno") int mno) {
-		memberService.memberUpdate(mno);
+	public String memberUpdate(@RequestParam("mno") int mno, Model model) {
+		
+		model.addAttribute("member", memberService.memberUpdate(mno));
 		return "memberUpdate";
 	}
 	
