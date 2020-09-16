@@ -27,7 +27,7 @@ public class MemberService {
 	}
 	
 	public int memberUpdateDone(Member member) {
-		return memberMapper.memberUpdateDone;
+		return memberMapper.memberUpdateDone(member);
 	}
 	
 	

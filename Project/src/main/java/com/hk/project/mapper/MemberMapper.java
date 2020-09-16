@@ -10,9 +10,9 @@ public interface MemberMapper {
 	
 	public int memberRegister(Member member);
 	
-	public Member memberUpdateGet(int mno);
+	public Member memberUpdate(int mno);
 	
-	public int memberUpdatePost(Member member);
+	public int memberUpdateDone(Member member);
 	
-	public Member memberDelete(int mno);
+	public int memberDelete(int mno);
 }
