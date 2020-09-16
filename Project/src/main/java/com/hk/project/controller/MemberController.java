@@ -16,7 +16,7 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
-	//리스트
+	//리스트gma
 	@GetMapping("/member/list")
 	public String memberList(Model model) {
 		model.addAttribute("members",memberService.memberList());
