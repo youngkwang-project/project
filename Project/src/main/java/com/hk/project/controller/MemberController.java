@@ -1,12 +1,11 @@
 package com.hk.project.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hk.project.service.MemberService;
 import com.hk.project.vo.Member;
@@ -33,18 +32,19 @@ public class MemberController {
 		return "memberRegisterDone";
 	}
 	@GetMapping(value="member/update")
-	public String memberGetOne(int mno) {
-		memberService.memberGetOne(mno);
+	public String memberGetOne(int mno, Model model) {
+		model.addAttribute("member", memberService.memberGetOne(mno));
+
 		return "memberUpdate";
 	}
 	@PostMapping(value="member/update")
 	public String memberUpdatePost(Member member, Model model) {
-		model.addAttribute("member", memberService.memberUpdatePost(member));
-		return "memberUdate";
+		memberService.memberUpdatePost(member);
+		return "memberUpdateDone";
 	}
-	@PostMapping(value="member/delete")
+	@GetMapping(value="member/delete")
 	public String memberDeletePost(int mno) {
 		memberService.memberDeletePost(mno);
-		return "memberDelete";
+		return "memberDeleteDone";
 	}
 }

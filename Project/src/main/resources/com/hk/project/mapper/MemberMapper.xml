@@ -9,8 +9,8 @@ select * from members
 </select>
 
 <insert id="memberRegisterPost">
-	insert into members(mno,email,pwd,mname,cre_date,mod_date)
-	values(member_seq.nextval, #{email},#{pwd},#{mname},sysdate,sysdate)
+	insert into members (mno, email, pwd, mname, cre_date,mod_date)
+	values (mno_sqe.nextval, #{email}, #{pwd}, #{mname}, sysdate, sysdate)
 </insert>
 
 <select id="memberGetOne" resultType="com.hk.project.vo.Member">
@@ -19,15 +19,10 @@ where mno=#{mno}
 </select>
 
 <update id = "memberUpdatePost">
-	update members
-		set email = #{email}
-			pwd = #{pwd}
-			mname = #{mname}
-			mod_date = sysdate
-		where mno= #{mno}
+	update MEMBERS set mname=#{mname}, email=#{email}, pwd=#{pwd} where mno=#{mno}
 </update>
 
-<delete id="memberDeltePost">
+<delete id="memberDeletePost">
 delete from members
 where mno=#{mno}
 </delete>
