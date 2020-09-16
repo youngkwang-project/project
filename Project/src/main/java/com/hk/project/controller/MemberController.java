@@ -34,7 +34,7 @@ public class MemberController {
 		System.out.println("---------------------" + member);
 		memberService.memberRegisterDone(member);
 		
-		model.addAttribute("name",member.getMname());
+		model.addAttribute("member",member);
 		return "memberRegisterDone";
 	}
 	
@@ -56,6 +56,6 @@ public class MemberController {
 	public String memberDelete(@RequestParam("mno") int mno) {
 		memberService.memberDelete(mno);
 		
-		return "memberDelete";
+		return "memberDeleteDone";
 	}
 }
