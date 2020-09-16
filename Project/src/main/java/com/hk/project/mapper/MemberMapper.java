@@ -1,6 +1,10 @@
 package com.hk.project.mapper;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
+
+import com.hk.project.vo.Member;
 
 @Repository
 public interface MemberMapper {
