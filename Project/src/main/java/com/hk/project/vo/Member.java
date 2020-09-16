@@ -1,4 +1,4 @@
-package com.hk.member.vo;
+package com.hk.project.vo;
 
 import java.util.Date;
 
