@@ -9,5 +9,5 @@
 </head>
 <body>
 ${member.mname}회원가입완료
-<a href="/">리스트</a>
+<a href="/list">리스트</a>
 <jsp:include page="./include/footer.jsp" />

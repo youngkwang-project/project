@@ -18,8 +18,8 @@ public class MemberService {
 			return memberMapper.memberList();
 		}
 		
-		public Member memberRegister(Member member) {
-			return memberMapper.memberRegister(member);
+		public int memberRegisterDone(Member member) {
+			return memberMapper.memberRegisterDone(member);
 		}
 		
 		public Member memberUpdate(int mno) {

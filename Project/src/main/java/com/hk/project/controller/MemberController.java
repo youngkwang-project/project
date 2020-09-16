@@ -30,8 +30,10 @@ public class MemberController {
 	}
 	
 	@PostMapping("/member/register")
-	public String memberRegister(Member member, Model model) {
-		memberService.memberRegister(member);
+	public String memberRegisterDone(Member member, Model model) {
+		System.out.println("---------------------" + member);
+		memberService.memberRegisterDone(member);
+		
 		model.addAttribute("name",member.getMname());
 		return "memberRegisterDone";
 	}
@@ -44,8 +46,8 @@ public class MemberController {
 	}
 	
 	@PostMapping("/member/update")
-	public String memberUpdate(Member member, Model model) {
-		model.addAttribute("name",member.getMname());
+	public String memberUpdateDone(Member member, Model model) {
+		model.addAttribute("member",member);
 		return "memberUpdateDone";
 	}
 	

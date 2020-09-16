@@ -8,9 +8,8 @@
 select * from members
 </select>
 
-<insert id="memberRegister">
-INSERT INTO MEMBERS (MNO ,EMAIL ,PWD ,MNAME ,CRE_DATE ,MOD_DATE )
-VALUES (MNO_SQE.NEXTVAL, #{email}, #{pwd}, #{mname}, sysdate, sysdate)
+<insert id="memberRegisterDone">
+INSERT INTO MEMBERS (MNO ,EMAIL ,PWD ,MNAME ,CRE_DATE ,MOD_DATE ) VALUES (MNO_SQE.NEXTVAL, #{email}, #{pwd}, #{mname}, sysdate, sysdate)
 </insert>
 
 <select id="memberUpdate" resultType="com.hk.project.vo.Member">

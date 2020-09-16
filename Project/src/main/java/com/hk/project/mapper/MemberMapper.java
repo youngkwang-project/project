@@ -11,7 +11,7 @@ public interface MemberMapper {
 	
 	public List<Member> memberList();
 	
-	public Member memberRegister(Member member);
+	public int memberRegisterDone(Member member);
 	
 	public Member memberUpdate(int mno);
 	
