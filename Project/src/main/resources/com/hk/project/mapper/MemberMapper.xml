@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<select id="memberList" resultType="com.hk.project.vo.Member">
+	select * from members
+</select>
+
+<insert id="memberRegister">
+INSERT INTO MEMBERS 
+(MNO, EMAIL, PWD, MNAME, CRE_DATE, MOD_DATE)
+VALUES(member_seq.nextval, #{email}, #{pwd}, #{mname}, sysdate, sysdate);
+</insert>
+
+<select id="memberUpdateGet" resultType="com.eb.member.dto.MemberVO" parameterType="int">
+select * from members where mno = #{mno}
+</select>
+
+<update id="memberUpdatePost">
+update members set email=#{email},pwd=#{pwd},mname=#{mname},mod_date=sysdate where mno=#{mno}
+</update>
+
+<delete id="memberDelete">
+delete from members where mno =#{mno}
+</delete>
