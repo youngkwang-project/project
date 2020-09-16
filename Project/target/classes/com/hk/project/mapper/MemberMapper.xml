@@ -16,4 +16,12 @@ VALUES (MNO_SQE.NEXTVAL, #{email}, #{pwd}, #{mname}, sysdate, sysdate)
 <select id="memberUpdate" resultType="com.hk.project.vo.Member">
 select * from members where mno=#{mno}
 </select>
+
+<update id="memberUpdateDone">
+update MEMBERS set mname=#{mname}, email=#{email}, pwd=#{pwd} where mno=#{mno}
+</update>
+
+<delete id="memberDelete">
+delete from members where mno=#{mno}
+</delete>
 </mapper>
