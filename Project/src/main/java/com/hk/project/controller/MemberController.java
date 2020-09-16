@@ -53,6 +53,7 @@ public class MemberController {
 	@GetMapping("/member/delete")
 	public String memberDelete(@RequestParam("mno") int mno) {
 		memberService.memberDelete(mno);
+		
 		return "memberDelete";
 	}
 }
