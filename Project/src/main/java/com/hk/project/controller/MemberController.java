@@ -1,13 +1,14 @@
 package com.hk.project.controller;
 
-import java.lang.reflect.Member;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.hk.project.service.MemberService;
+import com.hk.project.vo.Member;
 
 @Controller
 public class MemberController {
@@ -49,10 +50,10 @@ public class MemberController {
 		return "memberUpdateDone";
 	}
 	@GetMapping("/member/delete")
-	public String memberDeleteDone(Member member, Model model) {
+	public String memberDeleteDone(int mno, Model model) {
 		
-		memberService.memberDeleteDone(member);
-		model.addAttribute("member",member);
+		memberService.memberDelete(mno);
+		
 		
 		return "memberDeleteDone";
 	}
