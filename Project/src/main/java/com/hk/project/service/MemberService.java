@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hk.project.mapper.MemberMapper;
+import com.hk.project.vo.Member;
 
 @Service
 public class MemberService {

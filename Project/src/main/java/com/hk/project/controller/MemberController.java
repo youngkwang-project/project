@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
+import com.hk.project.service.MemberService;
+import com.hk.project.vo.Member;
+
 @Controller
 public class MemberController {
 
@@ -13,12 +16,12 @@ public class MemberController {
 	MemberService memberService;
 	
 	public String memberListGet(Model model){
-		model.addAttribute("members", memberService.memberList());
+		model.addAttribute("members", memberService.memberListGet());
 		return "memberList";
 	}
 	
-	public String memberRegisterGet(int mno) {
-		memberService.memberRegisterGet(mno);
+	public String memberRegisterGet() {
+		
 		return "memberRegister";
 	}
 	
@@ -33,11 +36,12 @@ public class MemberController {
 	}
 	
 	public String memberUpdatePost(Member member, Model model) {
-		model.addAttribute("member", memberService.memberUpdatePost());
+		model.addAttribute("member", memberService.memberUpdatePost(member));
+		return "memberUdate";
 	}
 	
 	public String memberDeletePost(int mno) {
-		memberService.memberDeletePost();
+		memberService.memberDeletePost(mno);
 		return "memberDelete";
 	}
 }
