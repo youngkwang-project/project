@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.hk.project.service.MemberService;
+import com.hk.project.vo.Member;
 
 @Controller
 public class MemberController {
@@ -23,11 +25,28 @@ public class MemberController {
 	//회원가입
 	@GetMapping("/member/register")
 	public String memberRegister(Model model) {
-		return "memberRegisterGet";
+		return "memberRegister";
 	}
 	
+	@PostMapping("/member/register")
+	public String memberRegister(Member member, Model model) {
+		memberService.memberRegister(member);
+		model.addAttribute("name",member.getMname());
+		return "memberRegisterDone";
+	}
 	
 	//회원정보수정
+	@GetMapping("/member/update")
+	public String memberUpdate(Member member) {
+		memberService.memberUpdate(member);
+		return "memberUpdate";
+	}
+	
+	@PostMapping("/member/update")
+	public String memberUpdate(Member member, Model model) {
+		model.addAttribute("name",member.getMname());
+		return "memberUpdateDone";
+	}
 	
 	//회원삭제
 
