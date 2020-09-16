@@ -14,7 +14,7 @@ local.properties
 .loadpath
 .recommenders
 .target/
-
+MANIFEST.MF
 # ignore properties file
 config.properties
 
@@ -147,5 +147,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
 
 # End of https://www.gitignore.io/api/git,java,maven,windows,eclipse
