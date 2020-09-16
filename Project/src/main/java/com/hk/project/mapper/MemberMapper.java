@@ -13,11 +13,11 @@ public interface MemberMapper {
 	
 	public Member memberRegister(Member member);
 	
-	public int memberUpdate(int mno);
+	public Member memberUpdate(int mno);
 	
 	public int memberUpdateDone(Member member);
 	
-	public int memberDelete(int mno);
+	public Member memberDelete(int mno);
 	
 	
 		
