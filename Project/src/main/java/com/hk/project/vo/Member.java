@@ -11,5 +11,5 @@ public class Member {
 	String email;
 	String pwd;
 	Date cre_date;
-	Date mode_date;
+	Date mod_date;
 }
