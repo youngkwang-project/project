@@ -8,6 +8,6 @@
 <title>회원가입완료</title>
 </head>
 <body>
-${member.mname}회원가입완료
+${name}회원가입완료
 <a href="/">리스트</a>
 <jsp:include page="./include/footer.jsp" />
