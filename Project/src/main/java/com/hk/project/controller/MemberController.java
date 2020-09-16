@@ -54,6 +54,6 @@ public class MemberController {
 	public String memberDelete(@RequestParam("mno") int mno) {
 		memberService.memberDelete(mno);
 		
-		return "memberDelete";
+		return "memberDeleteDone";
 	}
 }
