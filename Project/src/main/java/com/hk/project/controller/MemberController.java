@@ -38,8 +38,8 @@ public class MemberController {
 	
 	//회원정보수정
 	@GetMapping("/member/update")
-	public String memberUpdate(Member member) {
-		memberService.memberUpdate(member);
+	public String memberUpdate(@RequestParam("mno") int mno) {
+		memberService.memberUpdate(mno);
 		return "memberUpdate";
 	}
 	
